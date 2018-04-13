@@ -2,7 +2,7 @@ defmodule RabidRacoonWeb.PageController do
   use RabidRacoonWeb, :controller
 
   def index(conn, _params) do
-    %{body: body} = HTTPoison.get! "http://games.espn.com/fhl/scoreboard?leagueId=13103&scoringPeriodId=181"
+    %{body: body} = HTTPoison.get! "http://games.espn.com/flb/scoreboard?leagueId=1080&seasonId=2018"
 
     results = body
     |> Floki.find(".team")
@@ -33,7 +33,7 @@ defmodule RabidRacoonWeb.PageController do
     |> Floki.find(".score")
     |> Enum.map(fn elem -> 
         %{ 
-          score: elem |> Floki.text |> String.to_float
+          score: elem |> Floki.text |> Float.parse |> elem(0)
         }
     end)
 

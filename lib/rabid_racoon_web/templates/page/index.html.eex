@@ -7,8 +7,8 @@
   <%= Enum.map(@teams, fn team -> %>
     <div class="col-xs-12">
       <div class="row">
-        <div class="col-xs-2">
-          <h2><%= team.place %></h2>
+        <div class="col-xs-1">
+          <h3><%= team.place %></h3>
         </div>
         <a href="http://games.espn.com<%= team.teamLink %>" target="_blank" >
           <div class="col-xs-8 ">
@@ -16,8 +16,8 @@
           </div>
         </a>
         <a href="http://games.espn.com<%= team.matchupLink %>" target="_blank" >
-          <div class="col-xs-2 text-right">
-            <h2><%= team.score %></h2>
+          <div class="col-xs-3 text-right">
+            <h3><%= team.score %></h3>
           </div>
         </a>
       </div>
