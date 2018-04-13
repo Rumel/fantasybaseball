@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <h1>Weekly Standings</h1>
+  </div>
+</div>
+<div class="row">
+  <%= Enum.map(@teams, fn team -> %>
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-2">
+          <h2><%= team.place %></h2>
+        </div>
+        <a href="http://games.espn.com<%= team.teamLink %>" target="_blank" >
+          <div class="col-xs-8 ">
+            <h3><%= team.name %><h3>
+          </div>
+        </a>
+        <a href="http://games.espn.com<%= team.matchupLink %>" target="_blank" >
+          <div class="col-xs-2 text-right">
+            <h2><%= team.score %></h2>
+          </div>
+        </a>
+      </div>
+    </div>
+  <% end) %>
+</div>
