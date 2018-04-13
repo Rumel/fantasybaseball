@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :rabid_racoon,
-	espnUrl: "http://games.espn.com/flb/scoreboard?leagueId=1080&seasonId=2018"
+	espnUrl: Map.fetch!(System.get_env(), "ESPN_URL")
 
 # For production, we often load configuration from external
 # sources, such as your system environment. For this reason,
@@ -64,4 +64,4 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
