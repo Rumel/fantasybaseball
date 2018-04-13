@@ -2,7 +2,7 @@ defmodule RabidRacoonWeb.PageController do
   use RabidRacoonWeb, :controller
 
   def index(conn, _params) do
-    %{body: body} = HTTPoison.get! "http://games.espn.com/flb/scoreboard?leagueId=1080&seasonId=2018"
+    %{body: body} = HTTPoison.get!(Application.get_env(:rabid_racoon, :espnUrl))
 
     results = body
     |> Floki.find(".team")
@@ -44,8 +44,6 @@ defmodule RabidRacoonWeb.PageController do
     |> Enum.sort_by(fn x -> x.score end)
     |> Enum.reverse
     |> map_merge(nums)
-
-    IO.inspect maps
 
     render conn, "index.html", %{ teams: maps }
   end

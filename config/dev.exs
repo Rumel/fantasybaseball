@@ -1,5 +1,8 @@
 use Mix.Config
 
+config :rabid_racoon,
+  espnUrl: "http://games.espn.com/flb/scoreboard?leagueId=1080&seasonId=2018"
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -12,7 +15,8 @@ config :rabid_racoon, RabidRacoonWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+                    cd: Path.expand("../assets", __DIR__)]],
+  espnUrl: "http://games.espn.com/flb/scoreboard?leagueId=1080&seasonId=2018"
 
 # ## SSL Support
 #

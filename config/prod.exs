@@ -1,5 +1,8 @@
 use Mix.Config
 
+config :rabid_racoon,
+	espnUrl: "http://games.espn.com/flb/scoreboard?leagueId=1080&seasonId=2018"
+
 # For production, we often load configuration from external
 # sources, such as your system environment. For this reason,
 # you won't find the :http configuration below, but set inside

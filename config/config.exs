@@ -5,6 +5,9 @@
 # is restricted to this project.
 use Mix.Config
 
+config :rabid_racoon,
+	espnUrl: "http://games.espn.com/flb/scoreboard?leagueId=1080&seasonId=2018"
+
 # Configures the endpoint
 config :rabid_racoon, RabidRacoonWeb.Endpoint,
   url: [host: "localhost"],
